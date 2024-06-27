@@ -1050,6 +1050,13 @@ function on_ws_error() {
     divlog("WebSocket error.", 1);
 }
 
+var change_center_freq = (freq) => {
+    ws.send(JSON.stringify({
+        "type": "centerfreqchange",
+        "new_freq": freq
+    }));
+}
+
 var ws;
 
 function open_websocket() {

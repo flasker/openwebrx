@@ -661,6 +661,12 @@ img.openwebrx-mirror-img
     flex-grow: 1;
 }
 
+#openwebrx-panel-receiver .openwebrx-freq-button {
+    width: 27px;
+    height: 27px;
+    text-align: center;
+}
+
 #openwebrx-panel-receiver .openwebrx-bookmark-button {
     width: 27px;
     height: 27px;

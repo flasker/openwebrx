@@ -9,6 +9,14 @@ function DemodulatorPanel(el) {
     var displayEl = el.find('.webrx-actual-freq')
     this.tuneableFrequencyDisplay = displayEl.tuneableFrequencyDisplay();
     displayEl.on('frequencychange', function(event, freq) {
+        const freq_diff = Math.abs(freq - self.center_freq) > (bandwidth /2) ;
+        if (freq_diff ) {
+            if ( freq > self.center_freq ) {
+                change_center_freq(self.center_freq + ((freq - self.center_freq) - (bandwidth /2)));
+            }else {
+                change_center_freq(self.center_freq + ((freq - self.center_freq) - (bandwidth /2)));
+            }
+        }
         self.getDemodulator().set_offset_frequency(freq - self.center_freq);
     });
 

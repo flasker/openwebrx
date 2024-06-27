@@ -29,6 +29,15 @@ function BookmarkBar() {
         me.loadLocalBookmarks();
     });
 
+    var $freqButton = $('#openwebrx-panel-receiver').find('.openwebrx-freq-button');
+    $freqButton.show();
+    $freqButton.click(function() {
+//        ws.send(JSON.stringify({
+//            "type": "centerfreqchange",
+//            "action": center_freq
+//        }));
+    })
+
     var $bookmarkButton = $('#openwebrx-panel-receiver').find('.openwebrx-bookmark-button');
     if (typeof(Storage) !== 'undefined') {
         $bookmarkButton.show();

@@ -274,6 +274,8 @@ class OpenWebRxReceiverClient(OpenWebRxClient, SdrSourceEventClient):
         try:
             message = json.loads(message)
             if "type" in message:
+                if message["type"] == "centerfreqchange":
+                    self.sdr.props["center_freq"] = int(message["new_freq"])
                 if message["type"] == "dspcontrol":
                     dsp = self.getDsp()
                     if dsp is None:
